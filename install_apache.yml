@@ -7,16 +7,19 @@
   - name: update repository index
     yum:
      update_cache: yes      
-  
+    when: ansible_distribution == "CentOS"  
+
   - name: install nginx
     yum:
       name: nginx
       state: latest
+    when: ansible_distribution == "CentOS"
 
   - name: install the lastest version of Apache
     yum:
       name: httpd
       state: latest
+    when: ansible_distribution == "CentOS"
 
   - name: install PHP and php-mysql 
     yum:
@@ -25,3 +28,4 @@
       packages:
       - php
       - php-mysql
+    when: ansible_distribution == "CentOS"
