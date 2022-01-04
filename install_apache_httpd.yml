@@ -9,7 +9,15 @@
       name: httpd
       state: latest
     when: ansible_distribution == "CentOS"
-    
+ 
+  - name: start httpd (CentOS)
+    tags: apache, httpd, centos
+    service: 
+      name: httpd
+      state: started
+      enabled: yes
+    when: ansible_distribution == "CentOS"
+      
   - name: install the lastest version of Apache2
     yum:
       name: apache2
