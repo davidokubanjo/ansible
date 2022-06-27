@@ -1,6 +1,7 @@
 ---
 
-- hosts: all
+- name: testing to see if VSCode can sync
+  hosts: all
   become: true
   tasks:
   
